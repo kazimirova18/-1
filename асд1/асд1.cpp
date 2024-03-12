@@ -13,7 +13,8 @@ int main()
     const int n = 4, m = 8;
     int A[n][m];
     srand(time(0));
-
+    int compars = 0;
+    int swaps = 0;
     // Заповнення масиву та виведення на екран
     for (int i = 0; i < n; i++)
     {
@@ -26,13 +27,13 @@ int main()
     }
     cout << "\n\n";
 
-
     // Знаходження стовбця з максимальним за модулем елементом
+   // Знаходження стовбця з максимальним за модулем елементом
     int max_abs_col = 0;
     int max_abs_val = abs(A[0][0]);
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < n; j++)
         {
             int abs_val = abs(A[i][j]);
             if (abs_val > max_abs_val)
@@ -84,8 +85,8 @@ int main()
         cout << "\n\n";
     }
 
-
-
-
+    cout << "Кiлькiсть порiвнянь при сортуваннi вставкою: " << compars << endl;
+    cout << "Кiлькiсть обмiнiв при сортуваннi вставкою: " << swaps << endl;
     return 0;
 }
+
